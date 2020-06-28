@@ -1,4 +1,4 @@
-const modelDatos = require('./modelo');
+const modelDatos = require('./modelo2');
 const ctrlDatos = {
     findDatos: async (req, res) => {
         const data = await modelDatos.getData();

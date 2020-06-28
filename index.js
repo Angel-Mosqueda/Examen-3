@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const controlador = require("./controlador");
 const cors = require('cors');
 
 const app = express();
