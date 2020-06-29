@@ -1,3 +1,32 @@
 <div style="padding: 20px; text-align: center;">
-    <button class="btn btn-danger" (click)="funcionAPI2()">PROBAR</button>
+    <button class="btn btn-danger" style="margin-bottom: 20px;" (click)="funcionAPI2()">PROBAR API ATMÓSFERA</button>
+    <div *ngIf="bandera else nodatos">
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Temperatura °C</th>
+                    <th scope="col">Probabilidad de Percipitacion</th>
+                    <th scope="col">Latitud</th>
+                    <th scope="col">Longitud</th>
+                    <th scope="col">Estado del Cielo</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let estados of var1.results">
+                <td>{{estados.name}}</td>
+                <td>{{estados.state}}</td>
+                <td>{{estados.tempc}}</td>
+                <td>{{estados.probabilityofprecip}}</td>
+                <td>{{estados.latitude}}</td>
+                <td>{{estados.longitude}}</td>
+                <td>{{estados.skydescriptionlong}}</td>
+            </tr>
+        </table>
+    </div>
+    <ng-template #nodatos>
+        No hay datos
+    </ng-template>
+
+
 </div>
