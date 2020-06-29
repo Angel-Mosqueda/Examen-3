@@ -1,4 +1,54 @@
-<div style="padding: 20px; text-align: center;">
-    <button type="submit" class="btn btn-danger" >Probar</button>
-    <h1>Hola</h1>
+<div style="padding: 20px; text-align: center;" >
+
+    <form action="" (ngSubmit)="funcionAPI1()" method="POST">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Fecha: </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Ejemplo: 2020-06-27" name="fechaUsuario" [(ngModel)]="fechaUsuario" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        
+        <button class="btn btn-danger" (click)="funcionAPI1()" style="margin-bottom: 20px;">PROBAR API NASA</button>
+    </form>
+  <!--  <h2>Fecha</h2>
+    <p>{{var2.date}}</p>
+    <p>{{var2.explanation}}</p>
+    <p>{{var2.hdurl}}</p>
+    <p>{{var2.media_type}}</p>
+    <p>{{var2.service_version}}</p>
+    <p>{{var2.title}}</p>
+    <img [src]="var2.url" alt="imagen">-->
+    <body data-spy="scroll" data-target="#list-example">
+        
+    
+    <div *ngIf="bandera1 else nodatos">
+        <div id="list-example" class="list-group">
+            <a class="list-group-item list-group-item-action" href="#list-item-1">Fecha</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-2">Explicacion</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-3">Link</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-4">Tipo de Archivo</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-5">Version del Servicio</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-6">Titulo</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-7">Imagen</a>
+        </div>
+        <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+            <h4 id="list-item-1">Fecha</h4>
+            <p>{{var2.date}}</p>
+            <h4 id="list-item-2">Explicacion</h4>
+            <p>{{var2.explanation}}</p>
+            <h4 id="list-item-3">Link o HDURL</h4>
+            <a href="{{var2.hdurl}}" target="_blank"><p>{{var2.hdurl}}</p></a>
+            <h4 id="list-item-4">Tipo de Archivo</h4>
+            <p>{{var2.media_type}}</p>
+            <h4 id="list-item-5">Version del servicio</h4>
+            <p>{{var2.service_version}}</p>
+            <h4 id="list-item-6">Titulo</h4>
+            <p>{{var2.title}}</p>
+            <h4 id="list-item-7">Imagen</h4>
+            <img [src]="var2.url" alt="imagen">
+        </div>
+    </div>
+    <ng-template #nodatos>
+    </ng-template>
+    </body>
 </div>

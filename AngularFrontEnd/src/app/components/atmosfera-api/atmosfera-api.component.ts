@@ -7,20 +7,22 @@ import { ApiService } from './../../services/api.service';
   styleUrls: ['./atmosfera-api.component.css']
 })
 export class AtmosferaAPIComponent implements OnInit {
-
-  constructor(/*private _api: ApiService*/) { }
+  var1: any;
+  bandera: boolean;
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
   }
 
-  /*ProbarAPI(evt){
-    evt.preventDefault();
-    this._api.EnviarAPI({
+  funcionAPI2() {
+    this.bandera=true;
+    this.api.funcionAPI2().subscribe((var1: any[]) => {
+        this.var1 = var1;
+        console.log(this.var1);
+        console.log(this.var1.results[0].name);
 
-    }).subscribe(
-      (succes) =>{},
-      (error)=> {}
-    )
-  }*/
+    });
+  }
+
 
 }

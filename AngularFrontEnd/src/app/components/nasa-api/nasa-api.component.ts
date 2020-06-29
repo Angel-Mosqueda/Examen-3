@@ -7,20 +7,22 @@ import { ApiService } from './../../services/api.service';
   styleUrls: ['./nasa-api.component.css']
 })
 export class NasaAPIComponent implements OnInit {
-
-  constructor(/*private _api: ApiService*/) { }
+  var2: any;
+  bandera1: boolean;
+  fechaUsuario:any;
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
   }
 
-  /*ProbarAPI(evt){
-    evt.preventDefault();
-    this._api.EnviarAPI({
+  funcionAPI1() {
+    this.bandera1=true;
+    this.api.funcionAPI1({fecha: this.fechaUsuario}).subscribe((var2: any[]) => {
+        this.var2 = var2;
+        console.log(this.var2);
+        console.log(this.fechaUsuario);
 
-    }).subscribe(
-      (succes) =>{},
-      (error) => {}
-    );
-  }*/
+    });
+  }
 
 }
