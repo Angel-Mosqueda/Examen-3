@@ -1,5 +1,6 @@
 <div style="padding: 20px; text-align: center;">
     <button class="btn btn-danger" style="margin-bottom: 20px;" (click)="funcionAPI2()">PROBAR API ATMÓSFERA</button>
+    
     <div *ngIf="bandera else nodatos">
         <table class="table table-stripped">
             <thead>
@@ -25,8 +26,5 @@
         </table>
     </div>
     <ng-template #nodatos>
-        No hay datos
     </ng-template>
-
-
 </div>

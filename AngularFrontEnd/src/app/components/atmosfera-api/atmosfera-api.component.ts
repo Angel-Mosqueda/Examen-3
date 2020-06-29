@@ -8,14 +8,14 @@ import { ApiService } from './../../services/api.service';
 })
 export class AtmosferaAPIComponent implements OnInit {
   var1: any;
-  bandera: boolean = false;
+  bandera: boolean;
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
   }
 
   funcionAPI2() {
-    this.bandera = true;
+    this.bandera=true;
     this.api.funcionAPI2().subscribe((var1: any[]) => {
         this.var1 = var1;
         console.log(this.var1);

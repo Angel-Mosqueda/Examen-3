@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NasaAPIComponent } from './components/nasa-api/nasa-api.component';
 import { AtmosferaAPIComponent } from './components/atmosfera-api/atmosfera-api.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { AtmosferaAPIComponent } from './components/atmosfera-api/atmosfera-api.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

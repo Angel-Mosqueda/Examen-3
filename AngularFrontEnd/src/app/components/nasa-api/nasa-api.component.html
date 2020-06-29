@@ -1,3 +1,43 @@
 <div style="padding: 20px; text-align: center;">
-    <button class="btn btn-danger" (click)="funcionAPI1()">PROBAR</button>
+
+    <form action="" (ngSubmit)="funcionAPI1()" method="POST">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Fecha: </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Ejemplo: 2020-06-27" name="fechaUsuario"
+                [(ngModel)]="fechaUsuario" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <button class="btn btn-danger" (click)="funcionAPI1()" style="margin-bottom: 20px;">PROBAR API NASA</button>
+    </form>
+
+    <body data-spy="scroll" data-target="#list-example">
+        
+        <div *ngIf="!bandera2 else alerta">
+            <div *ngIf="bandera1 else nodatos">
+                <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                    <h4 id="list-item-1">Fecha</h4>
+                    <p>{{var2.date}}</p>
+                    <h4 id="list-item-2">Explicacion</h4>
+                    <p>{{var2.explanation}}</p>
+                    <h4 id="list-item-3">Link o HDURL</h4>
+                    <a href="{{var2.hdurl}}" target="_blank">
+                        <p>{{var2.hdurl}}</p>
+                    </a>
+                    <h4 id="list-item-6">Titulo</h4>
+                    <p>{{var2.title}}</p>
+                    <h4 id="list-item-7">Imagen</h4>
+                    <img [src]="var2.url" alt="imagen" width="400px" class="fas fa-align-center">
+                </div>
+            </div>
+            <ng-template #nodatos>
+            </ng-template>
+        </div>
+        <ng-template #alerta>
+            <div class="alert alert-danger" role="alert">
+                    <h5 class="text-center">FECHA INGRESADA INCORRECTAMENTE</h5>
+            </div>
+        </ng-template>
+    </body>
 </div>

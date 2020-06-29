@@ -6,12 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-  constructor( private _http: HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
-  funcionAPI1() {
-    return this._http.get('http://localhost:3000/api1');
+  funcionAPI1(fecha: any) {
+    var link: string = "http://localhost:3000/api1/" + fecha;
+    return this._http.get(link);
   }
-  
+
+
   funcionAPI2() {
     return this._http.get('http://localhost:3000/api2');
   }
